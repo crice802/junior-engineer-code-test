@@ -7,3 +7,7 @@
 <p>
     Posted by {{ post.posted_by }} on {{ post.posted_at }} (Last edited on {{ post.edited_at }})
 </p>
+{% comment %} div to show num_views on post {% endcomment %}
+<div>
+    {{post.views}} views
+</div>
