@@ -1,6 +1,5 @@
 from django.http.response import Http404
 from .models import Post
-
 from django.shortcuts import render
 
 def index(request):

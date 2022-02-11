@@ -15,7 +15,7 @@
  */
 function isValid(input, expectedCost, expectedOldestYear) {
   // Your code here
-  //assign var to track total cost 
+  //assign var to track total cost
   let cost = 0;
 
   //loop over array on inputs to validate if valid
@@ -45,7 +45,7 @@ function isValid(input, expectedCost, expectedOldestYear) {
     if (parseFloat(cost) < parseFloat(expectedCost)) {
       return false;
     }
-    //if it hasnt hit a return by here we are good to go 
+    //if it hasnt hit a return by here we are good to go
     return true;
   }
 }
@@ -55,114 +55,141 @@ function isValid(input, expectedCost, expectedOldestYear) {
  */
 function testIsValid() {
   // Your code here
-  //first test all valid arguments 
+  //first test all valid arguments
   console.log(
-    'EXPECTED: TRUE',
+    "EXPECTED: TRUE",
     isValid(
       [
         {
           type: "Truck",
           year: 1989,
           value: 200,
-        }],
-        500, 1970
-    ));
-//second test type invalid
+        },
+      ],
+      500,
+      1970
+    )
+  );
+  //second test type invalid
   console.log(
-    'EXPECTED: FALSE',
+    "EXPECTED: FALSE",
     isValid(
       [
         {
           type: "Ford",
           year: 2000,
           value: 200,
-        }],
-      500, 1980
-    ));
-//third test year is invalid
-console.log(
-  'EXPECTED: FALSE',
-  isValid(
-    [
-      {
-        type: "Truck",
-        year: 1989,
-        value: 200,
-      }],
-      500, 1999
-  ));
-//4th test value too high
-console.log(
-  'EXPECTED: FALSE',
-  isValid(
-    [
-      {
-        type: "Truck",
-        year: 1989,
-        value: 2000,
-      }],
-      500,1970
-  ));
-//test 5 mulptiple valid inputs
-console.log(
-  'EXPECTED: TRUE',
-  isValid(
-    [
-      {
-        type: "Truck",
-        year: 1989,
-        value: 200,
-      }, {
-        type: "Truck",
-        year: 1989,
-        value: 200,
-      }, {
-        type: "Truck",
-        year: 1989,
-        value: 200,
-      }],
-      5000, 1970
-  ));
-  //test 6 mulptiple inputs with middle invalid
+        },
+      ],
+      500,
+      1980
+    )
+  );
+  //third test year is invalid
   console.log(
-    'EXPECTED: FALSE',
+    "EXPECTED: FALSE",
     isValid(
       [
         {
           type: "Truck",
           year: 1989,
           value: 200,
-        }, {
-          type: "Ford",
+        },
+      ],
+      500,
+      1999
+    )
+  );
+  //4th test value too high
+  console.log(
+    "EXPECTED: FALSE",
+    isValid(
+      [
+        {
+          type: "Truck",
           year: 1989,
-          value: 200,
-        }, {
+          value: 2000,
+        },
+      ],
+      500,
+      1970
+    )
+  );
+  //test 5 mulptiple valid inputs
+  console.log(
+    "EXPECTED: TRUE",
+    isValid(
+      [
+        {
           type: "Truck",
           year: 1989,
           value: 200,
-        }],
-        5000,1970
-    ));
-//test 7 all valid inputs but final cost too high
-console.log(
-  'EXPECTED: FALSE',
-  isValid(
-    [
-      {
-        type: "Truck",
-        year: 1989,
-        value: 200,
-      }, {
-        type: "Truck",
-        year: 1989,
-        value: 200,
-      }, {
-        type: "Truck",
-        year: 1989,
-        value: 200,
-      }],
-      500, 1970
-  ));
+        },
+        {
+          type: "Truck",
+          year: 1989,
+          value: 200,
+        },
+        {
+          type: "Truck",
+          year: 1989,
+          value: 200,
+        },
+      ],
+      5000,
+      1970
+    )
+  );
+  //test 6 mulptiple inputs with middle invalid
+  console.log(
+    "EXPECTED: FALSE",
+    isValid(
+      [
+        {
+          type: "Truck",
+          year: 1989,
+          value: 200,
+        },
+        {
+          type: "Ford",
+          year: 1989,
+          value: 200,
+        },
+        {
+          type: "Truck",
+          year: 1989,
+          value: 200,
+        },
+      ],
+      5000,
+      1970
+    )
+  );
+  //test 7 all valid inputs but final cost too high
+  console.log(
+    "EXPECTED: FALSE",
+    isValid(
+      [
+        {
+          type: "Truck",
+          year: 1989,
+          value: 200,
+        },
+        {
+          type: "Truck",
+          year: 1989,
+          value: 200,
+        },
+        {
+          type: "Truck",
+          year: 1989,
+          value: 200,
+        },
+      ],
+      500,
+      1970
+    )
+  );
 }
 
 testIsValid();
